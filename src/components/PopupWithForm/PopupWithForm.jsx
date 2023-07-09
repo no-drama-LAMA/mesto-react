@@ -1,4 +1,4 @@
-function PopupWidthForm({name, title, buttonText, children, openState, onClose}) {
+function PopupWithForm({name, title, buttonText, children, openState, onClose}) {
   return (
     <section className={`popup popup_type_${name} ${openState && 'popup_opened'}`}>
       <div className="popup__container">
@@ -25,4 +25,4 @@ function PopupWidthForm({name, title, buttonText, children, openState, onClose})
   );
 }
 
-export default PopupWidthForm;
+export default PopupWithForm;

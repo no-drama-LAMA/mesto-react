@@ -1,7 +1,7 @@
 import Header from "./Header/Header";
 import Main from "./Main/Main";
 import Footer from "./Footer/Footer";
-import PopupWidthForm from "./PopupWithForm/PopupWithForm";
+import PopupWithForm from "./PopupWithForm/PopupWithForm";
 import ImagePopup from "./ImagePopup/ImagePopup";
 import { useState } from "react";
 function App() {
@@ -48,7 +48,7 @@ function App() {
       />
       <Footer />
       {/*Попап редактирования профиля*/}
-      <PopupWidthForm
+      <PopupWithForm
         name="profile"
         title="Редактировать профиль"
         buttonText="Сохранить"
@@ -77,9 +77,9 @@ function App() {
           maxLength={200}
         />
         <span className="popup__error-text" id="change-profile-about-error" />
-      </PopupWidthForm>
+      </PopupWithForm>
       {/*Попап добавления элемента*/}
-      <PopupWidthForm
+      <PopupWithForm
         name="add-element"
         title="Новое место"
         buttonText="Создать"
@@ -106,15 +106,15 @@ function App() {
           placeholder="Ссылка на картинку"
         />
         <span className="popup__error-text" id="new-element-img-error" />
-      </PopupWidthForm>
+      </PopupWithForm>
       {/*Попап удаления карточки*/}
-      <PopupWidthForm
+      <PopupWithForm
         name="delete-element"
         title="Вы уверены?"
         buttonText="Да"
       />
       {/*Попап обновления аватара*/}
-      <PopupWidthForm
+      <PopupWithForm
         name="change-avatar"
         title="Обновить аватар"
         buttonText="Создать"
@@ -130,7 +130,7 @@ function App() {
           placeholder="Ссылка на изображение"
         />
         <span className="popup__error-text" id="avatar-error" />
-      </PopupWidthForm>
+      </PopupWithForm>
 
       {/*Попап раскрытия картинки*/}
       <ImagePopup card={selectedCard} openState = {isImagePopupOpen} onClose = {closeAllPopups}/>
