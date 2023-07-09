@@ -1,7 +1,7 @@
 import Header from "./Header/Header";
 import Main from "./Main/Main";
 import Footer from "./Footer/Footer";
-import PopupWidthForm from "./PopupWidthForm/PopupWidthForm";
+import PopupWidthForm from "./PopupWithForm/PopupWithForm";
 import ImagePopup from "./ImagePopup/ImagePopup";
 import { useState } from "react";
 function App() {
