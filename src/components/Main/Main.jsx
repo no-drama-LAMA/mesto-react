@@ -18,6 +18,7 @@ function Main({onEditProfile, onAddPlace, onEditAvatar, onCard}) {
         cardSet.forEach((element) => element.masterId = userData._id);
         setCards(cardSet);
   })
+  .catch((error) => console.error(`Ошибка создания страницы ${error}`))
   }, [])
   
   return (
