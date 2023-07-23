@@ -3,8 +3,9 @@ function ImagePopup({card, openState, onClose}) {
     <section
     className={`popup popup_open-image ${openState && 'popup_opened'}`}
     aria-label="Раскрытие картинки"
+    onClick={onClose}
   >
-    <div className="popup__container">
+    <div className="popup__container" onClick={((evt) => evt.stopPropagation())}>
       <button
         className="popup__close-button"
         type="button"

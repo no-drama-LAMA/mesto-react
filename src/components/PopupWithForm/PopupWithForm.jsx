@@ -1,7 +1,7 @@
-function PopupWithForm({name, title, buttonText, children, openState, onClose}) {
+function PopupWithForm({ name, title, buttonText, children, openState, onClose, onSubmit, isFormValid=true }) {
   return (
-    <section className={`popup popup_type_${name} ${openState && 'popup_opened'}`}>
-      <div className="popup__container">
+    <section className={`popup popup_type_${name} ${openState && 'popup_opened'}`} onClick={onClose}>
+      <div className="popup__container" onClick={((evt) => evt.stopPropagation())}>
         <button
           className="popup__close-button"
           type="button"
@@ -10,13 +10,14 @@ function PopupWithForm({name, title, buttonText, children, openState, onClose}) 
         />
         <form
           className="popup__form"
-          name="change-profile-form"
-          id="change-profile-form"
-          noValidate=""
+          name={`${name}-form`}
+          id={`${name}-form`}
+          noValidate
+          onSubmit={onSubmit}
         >
           <h2 className="popup__title">{title}</h2>
           {children}
-          <button className="popup__submit-button" type="submit">
+          <button className={`popup__submit-button ${isFormValid ? ' ' : 'popup__submit-button_disabled'}`} type="submit">
             {buttonText}
           </button>
         </form>

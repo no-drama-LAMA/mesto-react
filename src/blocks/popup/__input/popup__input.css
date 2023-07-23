@@ -8,6 +8,7 @@
   width: 358px;
   height: 27px;
   font-family: inherit;
+  outline: 0;
 }
 
 .popup__input:last-of-type {
