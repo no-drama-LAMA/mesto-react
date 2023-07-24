@@ -65,7 +65,6 @@ function App() {
     setSelectedCard(element);
     setImagePopupOpen(true);
     setEventListeners()
-
   }
 
   function handleCardDelete(elementId) {
@@ -93,6 +92,15 @@ function App() {
         closeAllPopups()
       })
       .catch((error) => console.error(`Ошибка удаления карточки ${error}`))
+  }
+
+  function handleCardLike(element) {
+    const isLiked = element.likes.some(i => i._id === currentUser._id);
+    
+    api.likeCard(element._id, isLiked).then((newCard) => {
+      setCards((state) => state.map((c) => c._id === element._id ? newCard : c));
+    })
+    .catch((error) => console.error(`Ошибка изменения лайка ${error}`))
   }
 
   function handleUpdateUser(data, reset) {
@@ -134,6 +142,7 @@ function App() {
         onAddPlace = {handleAddPlaceClick}
         onEditAvatar = {handleEditAvatarClick}
         onCard = {handleCardClick}
+        onCardLike = {handleCardLike}
         onCardDelete = {handleCardDelete}
         cards = {cards}
       />

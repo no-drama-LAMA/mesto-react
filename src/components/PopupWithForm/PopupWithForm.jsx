@@ -1,4 +1,5 @@
 function PopupWithForm({ name, title, buttonText, children, openState, onClose, onSubmit, isFormValid=true }) {
+
   return (
     <section className={`popup popup_type_${name} ${openState && 'popup_opened'}`} onClick={onClose}>
       <div className="popup__container" onClick={((evt) => evt.stopPropagation())}>

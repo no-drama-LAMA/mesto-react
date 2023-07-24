@@ -69,19 +69,9 @@ class Api {
   }
 
   // Постановка и снятие лайка
-  likeCard(cardId) {
+  likeCard(cardId, like) {
     return fetch(`${this._url}/cards/${cardId}/likes`, {
-      method: 'PUT',
-      headers: {
-        authorization: this._authorization
-      }
-    })
-    .then(this._checkStatus)
-  }
-
-  deleteLikeCard(cardId) {
-    return fetch(`${this._url}/cards/${cardId}/likes`, {
-      method: 'DELETE',
+      method: like ? 'DELETE' : 'PUT',
       headers: {
         authorization: this._authorization
       }

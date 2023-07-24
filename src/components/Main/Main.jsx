@@ -2,7 +2,7 @@ import { useContext } from "react";
 import Card from "../Card/Card";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-function Main({onEditProfile, onAddPlace, onEditAvatar, onCard, onCardDelete, cards}) {
+function Main({onEditProfile, onAddPlace, onEditAvatar, onCard, onCardDelete, cards, onCardLike}) {
   const currentUser = useContext(CurrentUserContext);
   
   return (
@@ -37,7 +37,7 @@ function Main({onEditProfile, onAddPlace, onEditAvatar, onCard, onCardDelete, ca
       <section className="elements" aria-label="Галерея">
         {cards.map((data) => {
           return (
-          <Card key={data._id} element={data} onCard={onCard} onCardDelete={onCardDelete} />
+          <Card key={data._id} element={data} onCard={onCard} onCardDelete={onCardDelete} onCardLike={onCardLike}/>
           )
         })}
       </section>

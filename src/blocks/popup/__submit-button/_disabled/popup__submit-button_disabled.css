@@ -2,6 +2,7 @@
   border: 1px solid rgba(1, 1, 1, 0.2);
   background-color: white;
   color: rgba(1, 1, 1, 0.2);
+  pointer-events: none;
 }
 
 .popup__submit-button_disabled:hover {

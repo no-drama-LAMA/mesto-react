@@ -8,7 +8,7 @@ function EditAvatarPopup({ openState, onClose, onUpdateAvatar }) {
 
   function resetWhenClose() {
     onClose()
-      reset()
+    reset()
   }
 
   function handleSubmit(evt) {
